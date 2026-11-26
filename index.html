@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Jogo da velha</title>
+		<script src="jquery-2.2.1.js"></script>
+		<script src="jogo.js"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<body>
+		<div id="imagem_inicial">
+			<img src="img/titulo.png" alt="Jogo da velha" />
+		</div>
+		<div id="pagina_escolha">
+			<div class="opcao-jogo">
+				<img id="btn_1jog" src="img/1jog.png" alt="Escolher jogo para um jogador" />
+				<br />
+				<span>Um jogador</span>
+			</div>
+			<div class="opcao-jogo">
+				<img id="btn_2jog" src="img/2jogs.png" alt="Escolher jogo para dois jogadores" />
+				<br />
+				<span>Dois jogadores</span>
+			</div>
+		</div>
+		<div id="pagina_inicial_1jog">
+			<table border="0" width="800px;">
+				<tbody>
+					<tr>
+						<td align="center">
+							<img src="img/jogador1.png" />
+							<br />
+							<input id="inp_jogador1_1jog" type="text" maxlength="15" placeholder="Nome do jogador 1" />
+						</td>
+						<td align="center">
+							<img id="btn_play_1jog" src="img/play.png" alt="Iniciar jogo" />
+						</td>
+						<td align="center">
+							<img src="img/jogador3.png" />
+							<br />
+							<span class="nome-adversario">Computador</span>
+						</td>
+					</tr>
+				</table>
+			<a class="link-voltar" id="btn_voltar_1jog" href="#pagina_escolha">← Trocar modo de jogo</a>
+			<div id="mensagem_erro_1jog" class="mensagem-erro">
+    			<h2>Preencher o nome do jogador</h2>
+			</div>
+		</div>
+
+		<div id="pagina_inicial_2jog">
+			<table border="0" width="800px;">
+				<tbody>
+					<tr>
+						<td align="center">
+							<img src="img/jogador1.png" />
+							<br />
+							<input id="inp_jogador1_2jog" type="text" maxlength="15" placeholder="Nome do jogador 1" />
+						</td>
+						<td align="center">
+							<img id="btn_play_2jog" src="img/play.png" alt="Iniciar jogo" />
+						</td>
+						<td align="center">
+							<img src="img/jogador2.png" />
+							<br />
+							<input id="inp_jogador2_2jog" type="text" maxlength="15" placeholder="Nome do jogador 2" />
+						</td>
+					</tr>
+				</table>
+			<a class="link-voltar" id="btn_voltar_2jog" href="#pagina_escolha">← Trocar modo de jogo</a>
+			<div id="mensagem_erro_2jog" class="mensagem-erro">
+    			<h2>Preencher os nomes dos jogadores</h2>
+			</div>
+		</div>
+
+		<div id="pagina_jogo">
+			<div style="display:inline-block;">
+				<img src="img/jogador1.png" />
+				<br />
+				<span id="nome_jogador1"></span>
+			</div>
+
+			<div style="display:inline-block;">
+				<div class="tabuleiro">
+					<div class="jogada" data-indice="0"></div>
+					<div class="jogada" data-indice="1"></div>
+					<div class="jogada" data-indice="2"></div>
+					<div class="jogada" data-indice="3"></div>
+					<div class="jogada" data-indice="4"></div>
+					<div class="jogada" data-indice="5"></div>
+					<div class="jogada" data-indice="6"></div>
+					<div class="jogada" data-indice="7"></div>
+					<div class="jogada" data-indice="8"></div>
+				</div>
+			</div>
+
+			<div style="display:inline-block;">
+				<img id="imagem_jogador2" src="img/jogador3.png" alt="Computador" />
+				<br />
+				<span id="nome_jogador2"></span>
+			</div>
+			<div id="mensagem_box">
+    			<h2 id="texto_mensagem"></h2>
+    			<button id="btn_reiniciar">Jogar Novamente</button>
+			</div>
+		</div>
+
+	</body>
+</html>

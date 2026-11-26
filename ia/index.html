@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<title>Jogo da velha</title>
+		<script src="../jquery-2.2.1.js"></script>
+		<script src="jogo.js"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<body>
+		<div id="pagina_inicial">
+			<h1>JOGO DA VELHA</h1>
+			<table border="0" width="800px;">
+				<tbody>
+					<tr>
+						<td align="center">
+							<img src="img/jogador1.png" />
+							<br />
+							<input id="inp_jogador1" type="text" maxlength="15" placeholder="Digite nome do jogador 1" />
+						</td>
+						<td align="center">
+							<img id="btn_play" src="img/play.png" style="cursor: pointer;"/>
+						</td>
+						<td align="center">
+							<img src="img/jogador3.png" />
+							<br />
+							<span id="inp_jogador2">IA Gemma4</span>
+						</td>
+					</tr>
+				</table>
+			</table>
+			<div id="mensagem_erro">
+    			<h2>Preencher os nomes dos jogadores</h2>
+			</div>
+		</div>
+
+		<div id="pagina_jogo">
+			<div style="display:inline-block;">
+				<img src="img/jogador1.png" />
+				<br />
+				<span id="nome_jogador1"></span>
+			</div>
+
+			<div style="display:inline-block;">
+				<div class="tabuleiro">
+					<div class="jogada" id="a-1"></div>
+					<div class="jogada" id="a-2"></div>
+					<div class="jogada" id="a-3"></div>
+					<div class="jogada" id="b-1"></div>
+					<div class="jogada" id="b-2"></div>
+					<div class="jogada" id="b-3"></div>
+					<div class="jogada" id="c-1"></div>
+					<div class="jogada" id="c-2"></div>
+					<div class="jogada" id="c-3"></div>
+				</div>
+			</div>
+			<div style="display:inline-block;">
+				<img src="img/jogador3.png" />
+				<br />
+				<span id="nome_jogador2"></span>
+			</div>
+			<div id="status_ia" role="status" aria-live="polite">
+				A IA está processando a próxima jogada...
+			</div>
+			<div id="mensagem_box">
+    			<h2 id="texto_mensagem"></h2>
+    			<button id="btn_reiniciar">Jogar Novamente</button>
+			</div>
+		</div>
+
+	</body>
+</html>

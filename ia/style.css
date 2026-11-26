@@ -1,0 +1,113 @@
+#pagina_inicial{
+    position: fixed;
+    margin: auto;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 750px;
+    height: 650px;
+}
+
+#pagina_inicial h1{
+    margin-bottom: 100px; 
+    color:blue; 
+    font-size: 50px;
+}
+
+#mensagem_erro{
+    display: none; 
+    text-align: center; 
+    margin: 20px auto; 
+    padding: 15px; 
+    background-color: #f4f4f4; 
+    border: 2px solid #333;
+    border-radius: 8px; 
+    max-width: 300px;
+}
+
+#pagina_jogo{
+    display:none; 
+    margin-top:150px; 
+    text-align:center
+}
+
+#pagina_jogo > div:not(#mensagem_box){
+    vertical-align: middle;
+}
+
+#pagina_jogo > div:first-child{
+    margin-right: 50px;
+}
+
+#pagina_jogo > div:nth-child(3){
+    margin-left: 50px;
+}
+
+.tabuleiro{
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    width: 360px;
+    height: 360px;
+}
+
+#mensagem_box{
+    display: none; 
+    text-align: center; 
+    margin: 20px auto; 
+    padding: 15px; 
+    background-color: #f4f4f4; 
+    border: 2px solid #333;
+    border-radius: 8px; 
+    max-width: 300px;
+}
+
+#btn_reiniciar{
+    padding: 8px 16px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    background-color: #28a745; 
+    color: white; 
+    border:none; 
+    border-radius: 4px;
+}
+
+.jogada{
+    box-sizing: border-box;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#status_ia{
+    display: none;
+    margin: 20px auto 0;
+    padding: 10px 16px;
+    color: #856404;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.tabuleiro.aguardando-ia{
+    opacity: 0.65;
+    cursor: wait;
+}
+
+.tabuleiro.aguardando-ia .jogada{
+    cursor: wait;
+    pointer-events: none;
+}
+
+.jogada:nth-child(3n + 1),
+.jogada:nth-child(3n + 2){
+    border-right: solid 3px goldenrod;
+}
+
+.jogada:nth-child(-n + 6){
+    border-bottom: solid 3px goldenrod;
+}

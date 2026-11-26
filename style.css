@@ -1,0 +1,318 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#imagem_inicial{
+    margin: 18px auto 50px;
+    text-align: center;
+}
+
+#imagem_inicial img{
+    display: block;
+    width: min(750px, 95vw);
+    height: auto;
+    margin: 0 auto;
+}
+
+#pagina_escolha{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 70px;
+    margin: 0 auto 20px;
+}
+
+.opcao-jogo{
+    color: blue;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.opcao-jogo img{
+    height: 150px;
+    max-width: 240px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+#pagina_inicial_1jog,
+#pagina_inicial_2jog{
+    display: none;
+    width: min(800px, 100%);
+    margin: 0 auto 20px;
+}
+
+#pagina_inicial_1jog table,
+#pagina_inicial_2jog table{
+    width: 100%;
+}
+
+#pagina_inicial_1jog input,
+#pagina_inicial_2jog input{
+    padding: 8px;
+    font-size: 16px;
+}
+
+.nome-adversario{
+    display: inline-block;
+    min-height: 35px;
+    padding: 8px;
+    font-size: 16px;
+}
+
+#btn_1jog,
+#btn_2jog,
+#btn_play_1jog,
+#btn_play_2jog{
+    cursor: pointer;
+}
+
+.link-voltar{
+    display: inline-block;
+    margin-top: 12px;
+    color: #0757c7;
+    font-size: 20px;
+}
+
+.mensagem-erro,
+#mensagem_box{
+    display: none;
+    width: min(300px, calc(100% - 24px));
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #f4f4f4;
+    border: 2px solid #333;
+    border-radius: 8px;
+}
+
+#pagina_jogo{
+    display: none;
+    margin-top: 60px;
+    text-align: center;
+}
+
+#pagina_jogo > div:not(#mensagem_box){
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#pagina_jogo > div:first-child{
+    margin-right: 50px;
+}
+
+#pagina_jogo > div:nth-child(3){
+    margin-left: 50px;
+}
+
+.tabuleiro{
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    width: 360px;
+    height: 360px;
+}
+
+.jogada{
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.jogada:nth-child(3n + 1),
+.jogada:nth-child(3n + 2){
+    border-right: solid 3px goldenrod;
+}
+
+.jogada:nth-child(-n + 6){
+    border-bottom: solid 3px goldenrod;
+}
+
+#btn_reiniciar{
+    padding: 8px 16px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+}
+
+@media screen and (max-width: 500px){
+    #imagem_inicial{
+        margin-top: 10px;
+    }
+
+    #imagem_inicial img{
+        width: min(432px, 95vw);
+    }
+
+    #pagina_escolha{
+        gap: 12px;
+        margin: 0 auto 12px;
+    }
+
+    .opcao-jogo{
+        width: 45%;
+        margin-top: 30px;
+        font-size: 18px;
+    }
+
+    .opcao-jogo img{
+        width: 100%;
+        height: 112px;
+    }
+
+    #pagina_inicial_1jog,
+    #pagina_inicial_2jog{
+        width: calc(100% - 24px);
+        margin: 0 auto 12px;
+    }
+
+    #pagina_inicial_1jog table,
+    #pagina_inicial_2jog table{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto auto;
+    }
+
+    #pagina_inicial_1jog tbody,
+    #pagina_inicial_1jog tr,
+    #pagina_inicial_2jog tbody,
+    #pagina_inicial_2jog tr{
+        display: contents;
+    }
+
+    #pagina_inicial_1jog td,
+    #pagina_inicial_2jog td{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto !important;
+        padding: 8px 0;
+    }
+
+    #pagina_inicial_1jog td:nth-child(1),
+    #pagina_inicial_2jog td:nth-child(1){
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #pagina_inicial_1jog td:nth-child(2),
+    #pagina_inicial_2jog td:nth-child(2){
+        grid-column: 1 / -1;
+        grid-row: 2;
+        padding: 2px 0 8px;
+    }
+
+    #pagina_inicial_1jog td:nth-child(3),
+    #pagina_inicial_2jog td:nth-child(3){
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    #pagina_inicial_1jog td img,
+    #pagina_inicial_2jog td img{
+        max-width: 144px;
+        height: auto;
+    }
+
+    #pagina_inicial_1jog #btn_play_1jog,
+    #pagina_inicial_2jog #btn_play_2jog{
+        width: 128px;
+        margin-top: 30px;
+    }
+
+    #pagina_inicial_1jog input,
+    #pagina_inicial_2jog input{
+        width: min(100%, 150px);
+        padding: 9px 6px;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .nome-adversario{
+        font-size: 16px;
+    }
+
+    #pagina_jogo[style*="display: block"]{
+        display: grid !important;
+    }
+
+    #pagina_jogo{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto auto auto;
+        column-gap: 8px;
+        row-gap: 6px;
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px 8px;
+    }
+
+    #pagina_jogo > div:first-child,
+    #pagina_jogo > div:nth-child(3){
+        margin: 0 !important;
+    }
+
+    #pagina_jogo > div:first-child{
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #pagina_jogo > div:nth-child(2){
+        grid-column: 1 / -1;
+        grid-row: 2;
+        margin: 50px auto 30px !important;
+    }
+
+    #pagina_jogo > div:nth-child(3){
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    #pagina_jogo > div:not(#mensagem_box) img{
+        width: 140px;
+        height: auto;
+    }
+
+    #pagina_jogo > div:not(#mensagem_box) span{
+        display: block;
+        max-width: 120px;
+        margin: 0 auto;
+        font-size: 13px;
+        overflow-wrap: anywhere;
+    }
+
+    .tabuleiro{
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+        width: 240px;
+        height: 240px;
+    }
+
+    .jogada{
+        width: 80px;
+        height: 80px;
+        background-size: 64px auto;
+    }
+
+    #mensagem_box{
+        grid-column: 1 / -1;
+        grid-row: 3;
+        margin: 0 auto;
+        padding: 8px;
+    }
+
+    #mensagem_box h2{
+        margin: 4px 0 10px;
+        font-size: 18px;
+    }
+}

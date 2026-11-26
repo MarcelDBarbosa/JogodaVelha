@@ -1,0 +1,267 @@
+#pagina_inicial{
+    position: fixed;
+    margin: auto;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 750px;
+    height: 650px;
+}
+
+#pagina_inicial h1{
+    margin-bottom: 100px; 
+    color:blue; 
+    font-size: 50px;
+}
+
+#mensagem_erro{
+    display: none; 
+    text-align: center; 
+    margin: 20px auto; 
+    padding: 15px; 
+    background-color: #f4f4f4; 
+    border: 2px solid #333;
+    border-radius: 8px; 
+    max-width: 300px;
+}
+
+#pagina_jogo{
+    display:none; 
+    margin-top:150px; 
+    text-align:center
+}
+
+#pagina_jogo > div:not(#mensagem_box){
+    vertical-align: middle;
+}
+
+#pagina_jogo > div:first-child{
+    margin-right: 50px;
+}
+
+#pagina_jogo > div:nth-child(3){
+    margin-left: 50px;
+}
+
+.tabuleiro{
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    width: 360px;
+    height: 360px;
+}
+
+#mensagem_box{
+    display: none; 
+    text-align: center; 
+    margin: 20px auto; 
+    padding: 15px; 
+    background-color: #f4f4f4; 
+    border: 2px solid #333;
+    border-radius: 8px; 
+    max-width: 300px;
+}
+
+#btn_reiniciar{
+    padding: 8px 16px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    background-color: #28a745; 
+    color: white; 
+    border:none; 
+    border-radius: 4px;
+}
+
+.jogada{
+    box-sizing: border-box;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.jogada:nth-child(3n + 1),
+.jogada:nth-child(3n + 2){
+    border-right: solid 3px goldenrod;
+}
+
+.jogada:nth-child(-n + 6){
+    border-bottom: solid 3px goldenrod;
+}
+
+/* Ajustes para telas pequenas, como celulares estreitos. */
+@media screen and (max-width: 500px){
+    #pagina_inicial{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        width: calc(100% - 24px);
+        height: auto;
+        margin: 0;
+        max-height: calc(100vh - 24px);
+        overflow-y: auto;
+    }
+
+    #pagina_inicial h1{
+        margin: 16px 0 24px;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    #pagina_inicial table{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto auto;
+        width: 100% !important;
+    }
+
+    #pagina_inicial tbody,
+    #pagina_inicial tr{
+        display: contents;
+    }
+
+    #pagina_inicial td{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto !important;
+    }
+
+    #pagina_inicial td{
+        box-sizing: border-box;
+        padding: 8px 0;
+    }
+
+    #pagina_inicial img{
+        max-width: 144px;
+        height: auto;
+    }
+
+    #pagina_inicial td:nth-child(1){
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #pagina_inicial td:nth-child(2){
+        grid-column: 1 / -1;
+        grid-row: 2;
+        padding: 2px 0 8px;
+    }
+
+    #pagina_inicial td:nth-child(3){
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    #pagina_inicial #btn_play{
+        width: 128px;
+        margin-top: 30px;
+    }
+
+    #pagina_inicial input{
+        box-sizing: border-box;
+        width: min(100%, 150px);
+        padding: 1px 1px;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    #pagina_inicial #inp_jogador2{
+        font-size: 16px;
+        margin-top: 7px;
+    }
+
+    #mensagem_erro{
+        box-sizing: border-box;
+        width: 100%;
+        max-width: none;
+        margin: 12px auto;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    /* O jQuery mostra a tela com display: block; neste breakpoint, ela vira uma grade. */
+    #pagina_jogo[style*="display: block"]{
+        display: grid !important;
+    }
+
+    #pagina_jogo{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto auto auto;
+        column-gap: 8px;
+        row-gap: 6px;
+        box-sizing: border-box;
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px 8px;
+    }
+
+    #pagina_jogo > div:nth-child(1){
+        grid-column: 1;
+        grid-row: 1;
+        margin: 0 !important;
+    }
+
+    #pagina_jogo > div:nth-child(2){
+        grid-column: 1 / -1;
+        grid-row: 2;
+        margin: 0 auto !important;
+    }
+
+    #pagina_jogo > div:nth-child(3){
+        grid-column: 2;
+        grid-row: 1;
+        margin: 0 !important;
+    }
+
+    #pagina_jogo > div:not(#mensagem_box) img{
+        width: 140px;
+        height: auto;
+    }
+
+    #pagina_jogo > div:not(#mensagem_box) span{
+        display: block;
+        max-width: 120px;
+        margin: 0 auto;
+        font-size: 13px;
+        overflow-wrap: anywhere;
+    }
+
+    .tabuleiro{
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+        width: 240px;
+        height: 240px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+    .jogada{
+        width: 80px;
+        height: 80px;
+        background-size: 64px auto;
+    }
+
+    #mensagem_box{
+        grid-column: 1 / -1;
+        grid-row: 3;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0 auto;
+        padding: 8px;
+    }
+
+    #mensagem_box h2{
+        margin: 4px 0 10px;
+        font-size: 18px;
+    }
+
+    #btn_reiniciar{
+        font-size: 14px;
+    }
+}
