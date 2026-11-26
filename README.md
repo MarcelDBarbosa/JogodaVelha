@@ -11,9 +11,17 @@ Implementação do jogo da velha em HTML, CSS e JavaScript. A página principal 
 
 O projeto não utiliza `npm`, bundler ou backend próprio. A biblioteca jQuery 2.2.1 é mantida localmente no repositório, e todas as páginas a carregam por caminho relativo.
 
+## 🌐 Acesso online
+
+O jogo pode ser acessado diretamente pelo GitHub Pages:
+
+👉 [Jogar Jogo da Velha online](https://marceldbarbosa.github.io/JogodaVelha)
+
 ## 📚 Sumário
 
+- [Acesso online](#acesso-online)
 - [Modalidades](#modalidades)
+- [Telas do jogo](#telas-do-jogo)
 - [Tecnologias e recursos](#tecnologias-e-recursos)
 - [Pré-requisitos](#pré-requisitos)
 - [Estrutura de arquivos](#estrutura-de-arquivos)
@@ -75,6 +83,14 @@ Para escolher uma jogada, o computador analisa as casas disponíveis nesta ordem
 7. ↔️ escolhe uma das laterais restantes.
 
 Quando existem várias jogadas equivalentes, a função `sortear` escolhe uma delas aleatoriamente. Por isso, partidas com a mesma sequência inicial podem continuar de maneiras diferentes.
+
+## 🖼️ Telas do jogo
+
+As imagens abaixo apresentam o fluxo visual da página integrada: escolha do modo, preenchimento dos nomes e tabuleiro em funcionamento.
+
+| 🏠 Tela inicial | ✍️ Tela de nomes | 🎲 Tela do jogo |
+| --- | --- | --- |
+| <img src="img/Tela_inicial.png" alt="Tela inicial com a escolha do modo de jogo" width="280"> | <img src="img/Tela_nome.png" alt="Tela para informar os nomes dos jogadores" width="280"> | <img src="img/Tela_jogo.png" alt="Tela com o tabuleiro em funcionamento" width="280"> |
 
 ## 🧰 Tecnologias e recursos
 
