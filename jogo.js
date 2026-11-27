@@ -116,15 +116,16 @@ function jogarContraComputador(indice){
     }
 
     jogadorAtual = JOGADOR_2;
-    const jogadaComputador = escolherJogadaComputador(tabuleiro);
+    setTimeout(() => {
+        const jogadaComputador = escolherJogadaComputador(tabuleiro);
 
-    if(jogadaComputador !== null){
-        registrarJogada(jogadaComputador, JOGADOR_2);
-    }
+        if(jogadaComputador !== null){
+            registrarJogada(jogadaComputador, JOGADOR_2);
+        }
 
-    if(jogoAtivo){
-        jogadorAtual = JOGADOR_1;
-    }
+        if(jogoAtivo){
+            jogadorAtual = JOGADOR_1;
+        }}, 1000); // Pausa de 1s para não mostrar a jogada do computador instantaneamente
 }
 
 function registrarJogada(indice, jogador){
